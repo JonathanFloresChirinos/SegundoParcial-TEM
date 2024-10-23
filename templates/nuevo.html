@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Producto</title>
+</head>
+<body>
+    <h1 align="center">Nuevo Producto</h1>
+    <form action="{{ url_for('nuevo') }}" method="post">
+        <table align="center">
+            <tr>
+                <td align="right">
+                    <label for="">Nombre:</label>
+                </td>
+                <td>
+                    <input type="text" name="nombre" required>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <label for="">Cantidad:</label>
+                </td>
+                <td>
+                    <input type="number" name="cantidad" required>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <label for="">Precio:</label>
+                </td>
+                <td>
+                    <input type="number" name="precio" required>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <label for="">Fecha de Vencimiento:</label>
+                </td>
+                <td>
+                    <input type="date" name="fechaven" required>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <label for="">Categoría:</label>
+                </td>
+                <td>
+                    <input type="text" name="categoria" required>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td align="center">
+                    <button type="submit">Enviar</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

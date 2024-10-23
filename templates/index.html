@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo Parcial</title>
+</head>
+<body>
+    <fieldset align="center">
+        <h2>SEGUNDO PARCIAL TEM-742</h2>
+        <h4>Nombre: Jonathan Flores Chirinos</h4>
+        <h4>Carnet: 10073709 LP</h4>
+    </fieldset>
+
+    <h1 align="center">Gestión de Productos</h1>
+    
+
+    <table border="1" align="center">
+        <tr>
+            <td colspan="8">
+                <a href="{{ url_for('nuevo') }}">Nuevo Producto</a>
+            </td>
+        </tr>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Fecha_Vencimiento</th>
+            <th>Categoría</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for prod in productos %}
+        <tr>
+            <td>{{ prod.id }}</td>
+            <td>{{ prod.nombre }}</td>
+            <td>{{ prod.cantidad }}</td>
+            <td>{{ prod.precio }}</td>
+            <td>{{ prod.fechaven }}</td>
+            <td>{{ prod.categoria }}</td>
+            <td><a href="{{url_for('editar',id=prod.id)}}">Editar</a></td>
+            <td>
+                <form action="{{url_for('elimina',id=prod.id)}}" method="post">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="8" align="center"><a href="https://github.com/JonathanFloresChirinos/SegundoParcial-TEM.git">Página de GitHub - Jonathan Flores Chirinos</a></td>
+        </tr>
+    </table>
+</body>
+</html>
